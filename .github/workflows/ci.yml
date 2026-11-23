@@ -23,6 +23,8 @@ jobs:
         run: uv run pytest tests/test_unit
       - name: Run functional tests
         run: uv run behave tests/test_functional/features/
+      - name: Lint code with ruff
+        run: uv run ruff check --output-format=github
       - name: Run tests
         run: uv run pytest tests/test_architecture
 
